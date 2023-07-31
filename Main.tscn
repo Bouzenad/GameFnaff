@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://d58kmhc45gl3"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1"]
+
+[sub_resource type="Sky" id="Sky_0687v"]
+
+[sub_resource type="Environment" id="Environment_wftaw"]
+background_mode = 2
+sky = SubResource("Sky_0687v")
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="Main" type="Node"]
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="Map" type="Node3D" parent="World"]
+
+[node name="Floor" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(11.9406, 0, 0, 0, 0.111386, 0, 0, 0, 14.0544, 0, 0, 16.5844)
+
+[node name="Floor2" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(11.9406, 0, 0, 0, 0.111386, 0, 0, 0, 14.0544, 0, 14.9025, 14.8562)
+
+[node name="Wall1" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(0.51382, 0, 0, 0, 8.80967, 0, 0, 0, 5.06741, 11.9738, 6.36771, 24.5924)
+
+[node name="Wall8" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(0.51382, 0, 0, 0, 8.80967, 0, 0, 0, 5.06741, 11.9738, 6.36771, 5.62508)
+
+[node name="Wall9" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(0.51382, 0, 0, 0, 8.80967, 0, 0, 0, 5.06741, -10.628, 6.36771, 5.62508)
+
+[node name="Wall10" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(0.51382, 0, 0, 0, 1.98527, 0, 0, 0, 9.39067, -10.612, 15.7625, 14.3112)
+
+[node name="Wall11" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(0.51382, 0, 0, 0, 1.98527, 0, 0, 0, 9.39067, 11.8536, 15.7625, 14.3112)
+
+[node name="Wall2" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(0.51382, 0, 0, 0, 8.80967, 0, 0, 0, 6.16435, -10.7579, 6.40265, 23.389)
+
+[node name="Wall3" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(14.4495, 0, 0, 0, 8.80967, 0, 0, 0, 0.955591, 0.833143, 6.36771, 1.89275)
+
+[node name="Wall4" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(14.4495, 0, 0, 0, 5.44607, 0, 0, 0, 0.955591, 0.833143, 2.16501, 30.0946)
+size = Vector3(1, 1.05937, 1)
+
+[node name="Wall5" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(14.4495, 0, 0, 0, 1.45663, 0, 0, 0, 0.955591, 0.833143, 13.3924, 30.0946)
+
+[node name="Wall6" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(5.92243, 0, 0, 0, 5.32721, 0, 0, 0, 0.898457, 10.0144, 7.66811, 30.0946)
+
+[node name="Wall7" type="CSGBox3D" parent="World/Map"]
+transform = Transform3D(5.92243, 0, 0, 0, 5.32721, 0, 0, 0, 0.898457, -10.6218, 7.66811, 30.0946)
+
+[node name="Player" type="CharacterBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.12288, 6.06967)
+script = ExtResource("1")
+
+[node name="Movements" type="Node3D" parent="World/Player"]
+
+[node name="Head" type="Node3D" parent="World/Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.99598, 16.14)
+
+[node name="Camera3D" type="Camera3D" parent="World/Player/Head"]
+current = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 13)
+omni_range = 4096.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wftaw")

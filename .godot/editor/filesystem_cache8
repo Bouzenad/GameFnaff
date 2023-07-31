@@ -1,0 +1,6 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1690826122
+default_env.tres::Environment::-1::1690826085::0::1::::<><>::
+icon.png::CompressedTexture2D::2270338678529741968::1690818316::1690826125::1::::<><>::
+Main.tscn::PackedScene::-1::1690826085::0::1::::<><>::res://Player.gd
+Player.gd::GDScript::-1::1690820666::0::1::::<>RefCounted<>::
